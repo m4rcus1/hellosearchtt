@@ -87,8 +87,9 @@
             let url = x.value
             if (url !="") {
                 if (validURL(url)) {
-                    if(!url.includes('https://')){url='https://'+url;}
                     if (!url.includes('https://www.')) { url = "https://www." + url; }
+                    if(!url.includes('https://')){url='https://'+url;}
+                    
                     
                     window.location = url;
                 }

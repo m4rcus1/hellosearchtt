@@ -81,33 +81,34 @@
             return !!pattern.test(str);
         }
         function search() {
-            let x = document.getElementById('x')
+            let x = document.
+            getElementById('x')
             let url = x.value
-            if (url != null) {
+            if (url !="") {
                 if (validURL(url)) {
+                    if(!url.includes('https://')){url='https://'+url;}
                     if (!url.includes('https://www.')) { url = "https://www." + url; }
-
+                    
                     window.location = url;
                 }
                 else { window.location = "https://www.google.com/search?q=" + url; }
             }
-
+            return url;
         }
     </script>
 
 
     <center>
-
         <h1 style="padding-top:15%;color:#efefef" id="text" class="text">Hey, i'm AQ</h1>
     </center>
-    <form onsubmit="search()">
+    <form onsubmit="search()" >
         <div class="form-group">
             <div class="searsh">
                 <input type="text" placeholder="Search . . ." required id="x">
             </div>
         </div>
         <div class="form-group">
-            <input value="Search" style="margin-top:50px;padding:0px;text-align: center;" onclick="search()">
+            <input value="Search" style="margin-top:50px;padding:0px;text-align: center;" type="submit" id="in">
         </div>
     </form>
 </body>
